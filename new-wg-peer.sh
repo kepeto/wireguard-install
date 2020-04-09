@@ -1,6 +1,8 @@
 #!/bin/bash
 
 readonly INTERFACE="wg0"
+readonly ENDPOINT="wg.krenteg.com:15000"
+readonly DNS="1.1.1.1,8.8.8.8"
 
 # Generate peer keys
 readonly PRIVATE_KEY=$(wg genkey)
@@ -24,12 +26,12 @@ conf=$(cat <<END_OF_CONFIG
 [Interface]
 Address = ${PEER_ADDRESS}
 PrivateKey = ${PRIVATE_KEY}
-DNS = 1.1.1.1,8.8.8.8
+DNS = ${DNS}
 
 [Peer]
 PublicKey = ${SERVER_PUBLIC_KEY}
 AllowedIPs = 0.0.0.0/0
-Endpoint = wg.krenteg.com:15000
+Endpoint = ${ENDPOINT}
 END_OF_CONFIG
 )
 
