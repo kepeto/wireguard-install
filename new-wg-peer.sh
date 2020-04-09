@@ -1,7 +1,7 @@
 #!/bin/bash
 
 readonly INTERFACE="wg0"
-readonly ENDPOINT="wg.krenteg.com:15000"
+readonly ENDPOINT="changeWithYourEndpoint.com:51820"
 readonly DNS="1.1.1.1,8.8.8.8"
 
 # Generate peer keys
